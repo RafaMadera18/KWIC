@@ -1,4 +1,4 @@
-public class Printer extends Layer{
+public class Output extends Layer{
 
     private void printCombinations(String[][] combinations){
         for (String[] combination : combinations) {

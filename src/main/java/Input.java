@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Reader extends Layer {
+public class Input extends Layer {
 
     private String readString(){
         Scanner scanner = new Scanner(System.in);

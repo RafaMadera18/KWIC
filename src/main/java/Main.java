@@ -1,15 +1,17 @@
 public class Main {
 
     public static void main(String[] args) {
-        Layer reader = new Reader();
+        Layer input = new Input();
         Layer tokenizer = new Tokenizer();
-        Layer arrayCombinator = new ArrayCombinator();
-        Layer printer = new Printer();
+        Layer combinations = new Combinations();
+        Layer sorting = new Sorting();
+        Layer output = new Output();
 
-        reader.setNextLayer(tokenizer);
-        tokenizer.setNextLayer(arrayCombinator);
-        arrayCombinator.setNextLayer(printer);
+        input.setNextLayer(tokenizer);
+        tokenizer.setNextLayer(combinations);
+        combinations.setNextLayer(sorting);
+        sorting.setNextLayer(output);
 
-        reader.execute(null);
+        input.execute(null);
     }
 }

@@ -1,10 +1,8 @@
-import java.util.Arrays;
-
-public class ArrayCombinator extends Layer {
+public class Combinations extends Layer {
 
     private String[][] combinations;
 
-    private String[][] combinateStringArray(String[] stringArray){
+    private String[][] combinateArray(String[] stringArray){
         this.combinations = new String[stringArray.length][stringArray.length];
 
         for (int row = 0; row < stringArray.length; row++){
@@ -18,7 +16,6 @@ public class ArrayCombinator extends Layer {
 
             addCombinationToMatrixCombinations(stringArray, row);
         }
-        sortCombinationsAlphabetically();
         return this.combinations;
     }
 
@@ -26,17 +23,8 @@ public class ArrayCombinator extends Layer {
         System.arraycopy(combination, 0, this.combinations[rowNumber], 0, combination.length);
     }
 
-    private void sortCombinationsAlphabetically() {
-        Arrays.sort(this.combinations, (row1, row2) -> {
-            String str1 = String.join(" ", row1);
-            String str2 = String.join(" ", row2);
-            return str1.compareToIgnoreCase(str2);
-        });
-    }
-
-
     @Override
     public Object run(Object object) {
-        return combinateStringArray((String[]) object);
+        return combinateArray((String[]) object);
     }
 }
