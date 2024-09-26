@@ -1,7 +1,5 @@
 public class Main {
 
-
-
     public static void main(String[] args) {
         StringReader stringReader = new StringReader();
         StringTokenizer stringTokenizer = new StringTokenizer();
