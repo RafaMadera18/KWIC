@@ -1,10 +1,10 @@
 import java.util.Arrays;
 
-public class ArrayCombinator {
+public class ArrayCombinator extends Layer {
 
     private String[][] combinations;
 
-    public String[][] combinateStringArray(String[] stringArray){
+    private String[][] combinateStringArray(String[] stringArray){
         this.combinations = new String[stringArray.length][stringArray.length];
 
         for (int row = 0; row < stringArray.length; row++){
@@ -35,4 +35,8 @@ public class ArrayCombinator {
     }
 
 
+    @Override
+    public Object run(Object object) {
+        return combinateStringArray((String[]) object);
+    }
 }

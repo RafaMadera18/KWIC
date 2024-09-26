@@ -1,9 +1,14 @@
 import java.util.Scanner;
 
-public class Reader {
+public class Reader extends Layer {
 
-    public String readString(){
+    private String readString(){
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
+    }
+
+    @Override
+    public Object run(Object object) {
+        return readString();
     }
 }
