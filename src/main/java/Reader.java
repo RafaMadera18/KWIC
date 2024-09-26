@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class StringReader {
+public class Reader {
 
     public String readString(){
         Scanner scanner = new Scanner(System.in);

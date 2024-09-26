@@ -1,14 +1,14 @@
 public class Main {
 
     public static void main(String[] args) {
-        StringReader stringReader = new StringReader();
-        StringTokenizer stringTokenizer = new StringTokenizer();
-        StringArrayCombinator stringArrayCombinator = new StringArrayCombinator();
-        CombinationsPrinter combinationsPrinter = new CombinationsPrinter();
+        Reader reader = new Reader();
+        Tokenizer tokenizer = new Tokenizer();
+        ArrayCombinator arrayCombinator = new ArrayCombinator();
+        Printer printer = new Printer();
 
-        String text = stringReader.readString();
-        String[] textArray = stringTokenizer.stringToArray(text, " ");
-        String[][] combinations = stringArrayCombinator.combinateStringArray(textArray);
-        combinationsPrinter.printCombinations(combinations);
+        String text = reader.readString();
+        String[] textArray = tokenizer.stringToArray(text, " ");
+        String[][] combinations = arrayCombinator.combinateStringArray(textArray);
+        printer.printCombinations(combinations);
     }
 }

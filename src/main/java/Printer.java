@@ -1,4 +1,4 @@
-public class CombinationsPrinter {
+public class Printer {
 
     public void printCombinations(String[][] combinations){
         for (String[] combination : combinations) {

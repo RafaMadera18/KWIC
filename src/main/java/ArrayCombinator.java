@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class StringArrayCombinator {
+public class ArrayCombinator {
 
     private String[][] combinations;
 
