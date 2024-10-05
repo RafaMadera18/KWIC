@@ -1,11 +1,11 @@
-public class Tokenizer extends Layer {
+public class Tokenizer extends Filter<String, String[]> {
 
     private String[] stringToArray(String string){
         return string.split(" ");
     }
 
     @Override
-    public Object run(Object object) {
-        return stringToArray((String) object);
+    protected String[] run(String string) {
+        return stringToArray(string);
     }
 }

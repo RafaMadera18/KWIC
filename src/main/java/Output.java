@@ -1,4 +1,4 @@
-public class Output extends Layer{
+public class Output {
 
     private void printCombinations(String[][] combinations){
         for (String[] combination : combinations) {
@@ -9,9 +9,7 @@ public class Output extends Layer{
         }
     }
 
-    @Override
-    public Object run(Object object) {
-        printCombinations((String[][]) object);
-        return null;
+    public void execute(String[][] combinations) {
+        printCombinations(combinations);
     }
 }

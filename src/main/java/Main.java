@@ -1,17 +1,26 @@
 public class Main {
 
     public static void main(String[] args) {
-        Layer input = new Input();
-        Layer tokenizer = new Tokenizer();
-        Layer combinations = new Combinations();
-        Layer sorting = new Sorting();
-        Layer output = new Output();
+        Input input = new Input();
+        Tokenizer tokenizer = new Tokenizer();
+        Combinations combinations = new Combinations();
+        Sorting sorting = new Sorting();
+        Output output = new Output();
 
-        input.setNextLayer(tokenizer);
-        tokenizer.setNextLayer(combinations);
-        combinations.setNextLayer(sorting);
-        sorting.setNextLayer(output);
+        Pipe<String> pipe1 = new Pipe<>();
+        Pipe<String[]> pipe2 = new Pipe<>();
+        Pipe<String[][]> pipe3 = new Pipe<>();
+        Pipe<String[][]> pipe4 = new Pipe<>();
 
-        input.execute(null);
+        input.setPipe(pipe1);
+        pipe1.setNextFilter(tokenizer);
+        tokenizer.setOutputPipe(pipe2);
+        pipe2.setNextFilter(combinations);
+        combinations.setOutputPipe(pipe3);
+        pipe3.setNextFilter(sorting);
+        sorting.setOutputPipe(pipe4);
+        pipe4.setOutput(output);
+
+        input.execute();
     }
 }

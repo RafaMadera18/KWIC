@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Sorting extends Layer {
+public class Sorting extends Filter<String[][], String[][]> {
 
     private String[][] sortCombinationsAlphabetically(String[][] combinations) {
         Arrays.sort(combinations, (row1, row2) -> {
@@ -12,8 +12,7 @@ public class Sorting extends Layer {
     }
 
     @Override
-    public Object run(Object object) {
-        return sortCombinationsAlphabetically((String[][]) object);
+    protected String[][] run(String[][] combinations) {
+        return sortCombinationsAlphabetically(combinations);
     }
-
 }

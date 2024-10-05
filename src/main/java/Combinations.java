@@ -1,4 +1,4 @@
-public class Combinations extends Layer {
+public class Combinations extends Filter<String[], String[][]> {
 
     private String[][] combinations;
 
@@ -23,8 +23,9 @@ public class Combinations extends Layer {
         System.arraycopy(combination, 0, this.combinations[rowNumber], 0, combination.length);
     }
 
+
     @Override
-    public Object run(Object object) {
-        return combinateArray((String[]) object);
+    protected String[][] run(String[] strings) {
+        return combinateArray(strings);
     }
 }
